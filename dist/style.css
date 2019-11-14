@@ -53,12 +53,18 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background: #F9B282;
+}
+
 header {
   background-color: #8F4426;
   padding: 30px 0px;
   text-align: center;
   color: #212121;
   font-family: "Montserrat";
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
 }
 header h1 {
   font-size: 32px;
@@ -71,8 +77,18 @@ header h2 {
   background: #F9B282;
 }
 
-#zen-preamble, .sidebar {
+.sidebar, #zen-preamble {
   background: #64CCDA;
+}
+
+#zen-preamble {
+  border-radius: 35px;
+}
+
+.sidebar {
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  text-align: center;
 }
 
 a {
@@ -85,15 +101,21 @@ a:hover {
 }
 
 #zen-summary, #zen-supporting, #zen-preamble, .sidebar {
-  padding: 30px;
+  text-align: justify;
+  line-height: 20pt;
   color: #212121;
   font-size: 16px;
   font-family: "Open Sans";
+  padding: 30px;
 }
 #zen-summary h3, #zen-supporting h3, #zen-preamble h3, .sidebar h3 {
   font-size: 28px;
   margin: 20px 0px;
   font-family: "Montserrat";
+  transition: 0.3s;
+}
+#zen-summary h3:hover, #zen-supporting h3:hover, #zen-preamble h3:hover, .sidebar h3:hover {
+  letter-spacing: 10px;
 }
 
 footer {

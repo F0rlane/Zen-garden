@@ -62,6 +62,24 @@ $font-color: #212121;
 //---- Appel FONT ----
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700&display=swap');
 
+@mixin a-style {
+	text-decoration: none;
+	font-weight: bold;
+	color: $second-color;
+}
+@mixin font-style {
+	text-align: justify;
+	line-height: 20pt;
+	color: $font-color;
+	font-size: 16px;
+	font-family: 'Open Sans';
+}
+%body-color{
+	background: $third-color;
+}
+body{
+	@extend %body-color;
+}
 //header
 header{
     background-color: $first-color;
@@ -69,6 +87,8 @@ header{
 	text-align: center;
 	color: $font-color;
 	font-family: 'Montserrat';
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
     h1{
         font-size: 32px;
     }
@@ -79,26 +99,36 @@ header{
 #zen-summary, #zen-supporting{
 	background: $third-color;
 }
-#zen-preamble, .sidebar{
-	background: $fourth-color;
+%color-four{
+	background: $fourth-color;	
+}
+#zen-preamble{
+	@extend %color-four;
+	border-radius: 35px;
+}
+.sidebar{
+	@extend %color-four;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 35px;
+	text-align: center;
 }
 a{
-	text-decoration: none;
-	font-weight: bold;
-	color: $second-color;
+	@include a-style;
 	&:hover{
 		color: $first-color;
 	}
 }
 #zen-summary, #zen-supporting, #zen-preamble, .sidebar{
+	@include font-style;
 	padding: 30px;
-	color: $font-color;
-	font-size: 16px;
-	font-family: 'Open Sans';
 	h3{
 		font-size: 28px;
 		margin: 20px 0px;
 		font-family: 'Montserrat';
+		transition: 0.3s;
+		&:hover{
+			letter-spacing: 10px;
+		}
 	}
 }
 footer{
